@@ -12,12 +12,24 @@
             <input [(ngModel)]="registerUserData.contrasena" type="password" class="form-control" name="contrasena"
                 placeholder="Password">
         </div>
-        <button (click)="loginUser()" type="button" style="width: 270px" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Iniciar</button>
+        <button (click)="loginUser()" type="button" style="width: 270px" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i>
+            Iniciar</button>
     </form>
 </div>
 
 <div class="container" *ngIf="usuario">
-    <app-navegacion></app-navegacion>
-    <br>
-    <router-outlet></router-outlet>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <br>
+            <app-navegacion></app-navegacion>
+        </div>
+        <div class="col-md-9">
+            <h1 class="display-4 my-0 mr-md-auto font-weight-normal text-center">Bienvenidos</h1>
+            <br>
+            <router-outlet></router-outlet>
+        </div>
+
+    </div>
 </div>

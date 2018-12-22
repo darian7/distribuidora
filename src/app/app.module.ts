@@ -24,10 +24,13 @@ import { ClientesComponent } from './clientes/clientes.component';
 import { ClientePipe } from './cliente.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CrearclienteComponent } from './crearcliente/crearcliente.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
+import { UpdateclientComponent } from './updateclient/updateclient.component';
 
 
 
 const routes: Routes = [
+  { path: 'updateUser/:id', component: UpdateuserComponent },  
   { path: 'mostrarusuarios', component: MostrarusuariosComponent },
   { path: 'crearusuarios', component: CrearusuariosComponent },
   { path: 'pedidos', component: PedidosComponent },
@@ -36,6 +39,7 @@ const routes: Routes = [
   { path: 'detallepedido/:id', component: ProductosenpedidoComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'insertarproductos', component: InsertarproductosComponent },
+  { path: 'updateClient/:id', component: UpdateclientComponent },  
   { path: 'clientes', component: ClientesComponent },
   { path: 'createclientes', component: CrearclienteComponent},
   { path: 'app', component: AppComponent },
@@ -63,6 +67,8 @@ const routes: Routes = [
     ClientesComponent,
     ClientePipe,
     CrearclienteComponent,
+    UpdateuserComponent,
+    UpdateclientComponent,
   ],
   imports: [
     BrowserModule,

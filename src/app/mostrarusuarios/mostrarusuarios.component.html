@@ -1,42 +1,33 @@
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">USUARIOS</h1>
-  <p class="lead">lista de usuarios registrados.</p>
+<div class="row justify-content-center">
+  <div class="col-md-2"><span class="label label-danger">Buscar Usuario</span></div>
+  <div class="col-md-6">
+    <input [(ngModel)]="buscador" name="buscar" class="form-control mr-sm-2" type="search">
+  </div>
+
 </div>
 
-<div>
+<div class="row ">
 
-  <hr>
+  <div *ngFor="let Usuarios of (usuarios | filtrousuarios : buscador)" class="col-md-4 text-center text-white">
 
-  <div class="row justify-content-center">
-    <div class="col-md-2"><span class="label label-danger">Buscar Usuario</span></div>
-    <div class="col-md-6">
-      <input [(ngModel)]="buscador" name="buscar" class="form-control mr-sm-2"
-        type="search">
-    </div>
-
-  </div>
-
-  <div class="row ">
-
-    <div *ngFor="let Usuarios of (usuarios | filtrousuarios : buscador)" class="col-md-4 text-center text-white">
-
+    <br>
+    <div class=" bg-primary" [ngClass]="{'bg-warning d-done':Usuarios.estado==0}">
       <br>
-      <div class=" bg-primary" [ngClass]="{'bg-warning d-done':Usuarios.estado==0}">
-
-        <br>
-        <span *ngIf="Usuarios.estado; else falso" class="fas fa-user-check" style="font-size:100px"></span>
-        <ng-template #falso> <span class="fas fa-user-times" style="font-size:100px"></span> </ng-template>
-        <br>
-        <label>{{Usuarios.nombre}}</label>
-        <br>
-        <label>Correo: {{Usuarios.correo}}</label>
-        <br>
-        <label>Comentario:</label>
-        <br>
-        <label>{{Usuarios.comentario}}</label>
-      </div>
+      <span *ngIf="Usuarios.estado; else falso" class="fas fa-user-check" style="font-size:100px"></span>
+      <ng-template #falso> <span class="fas fa-user-times" style="font-size:100px"></span> </ng-template>
+      <br>
+      <label>{{Usuarios.nombre}}</label>
+      <br>
+      <label>Correo: {{Usuarios.correo}}</label>
+      <br>
+      <label>Comentario:</label>
+      <br>
+      <label>{{Usuarios.comentario}}</label>
+      <br>
+      <a class="text-danger" [routerLink]="['/updateUser',Usuarios.idUsuario]">Actualizar</a>
+      <br>
+      <br>
     </div>
-
   </div>
-  <hr>
+
 </div>

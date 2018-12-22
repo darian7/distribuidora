@@ -30,10 +30,6 @@ export class PedidosComponent implements OnInit {
     this.ConsultarPedidoCola2();
   }
 
-  ver() {
-    console.log(this.PedidosCola)
-  }
-
   ConsultarPedidosAtendido2() {
 
     this.Servicio.CosnultarPedidoEstado2("Atendido").pipe(
@@ -107,8 +103,6 @@ export class PedidosComponent implements OnInit {
     });
 
   }
-
-
 
 }
 

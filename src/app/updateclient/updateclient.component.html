@@ -1,15 +1,15 @@
 <div class="container">
 
-  <div class="row">
+  <div class="row justify-content-center">
 
-    <div class="col-md-12 order-md-1">
+    <div class="col-md-8 order-md-1">
       <h4 class="mb-3">Datos del Cliente</h4>
 
       <form onsubmit="this.reset()" class="form">
         <div class="row">
           <div class="col-md-6 mb-3 form-group">
             <label>Nombres</label>
-            <input (keyup)="Verificar()" [(ngModel)]="ClientDatos.nombre" type="text" class="form-control" name="nombre"
+            <input [(ngModel)]="ClientDatos.nombre" type="text" class="form-control" name="nombre"
               placeholder="" value="" required="">
           </div>
           <div class="col-md-6 mb-3 form-group">
@@ -45,7 +45,7 @@
         </div>
         <hr class="mb-4">
         <hr class="mb-4">
-        <button [disabled]="lleno" (click)="CreateClient()" class="btn btn-primary btn-lg btn-block" type="submit">Guardar
+        <button (click)="UpdateClient()" class="btn btn-primary btn-lg btn-block" type="submit">Actualizar
           Cliente</button>
       </form>
     </div>

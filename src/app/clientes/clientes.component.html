@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6">
-      <input [(ngModel)]="buscador" type="text">
+    <input [(ngModel)]="buscador" type="text">
   </div>
 </div>
 
@@ -11,7 +11,10 @@
     <br>
     <label>Identificacion: {{cliente.identificacion}}</label>
     <br>
-    <label>Estado: {{cliente.estado}}</label>
+    <div *ngIf="cliente.estado"> <label>Estado: Habilitado</label> </div>
+    <div *ngIf="!cliente.estado"> <label>Estado: desabilitado</label> </div>
+    <br>
+    <a class="text-danger" [routerLink]="['/updateClient',cliente.idCliente]">Actalizar</a>
     <br>
     <br>
   </div>

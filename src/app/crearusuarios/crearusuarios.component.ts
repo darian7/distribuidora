@@ -54,7 +54,7 @@ export class CrearusuariosComponent implements OnInit {
     }
 
     this.CrearUsuariosService.CrearUsuarios(this.UserDatos)
-
+    this.lleno=true;
   }
 
   Verificar() {

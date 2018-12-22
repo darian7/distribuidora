@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
 
+
 @Component({
   selector: 'app-mostrarusuarios',
   templateUrl: './mostrarusuarios.component.html',
@@ -8,7 +9,8 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class MostrarusuariosComponent implements OnInit {
 
-  constructor(private UsuariosService: AuthService) { }
+  constructor(private UsuariosService: AuthService) {
+  }
 
   usuarios: Array<{
     idUsuario: Number,
@@ -30,7 +32,7 @@ export class MostrarusuariosComponent implements OnInit {
   MostrarUsuarios() {
 
     this.UsuariosService.MostrarUsuarios().then(response => response.json())
-      .then(json => this.usuarios = json).catch(function(error) {
+      .then(json => this.usuarios = json).catch(function (error) {
         console.log('Hubo un problema con la petición Fetch:' + error.message);
         return confirm('No Hay Conexion a Internet');
       });

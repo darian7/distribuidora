@@ -164,5 +164,32 @@ export class AuthService {
     };
     return this.http.post(this.urlbase.geturl() + "cliente/create", cliente, httpPostOptions)
   }
+
+  SelectUser(iduser) {
+    return this.http.get(this.urlbase.geturl() + "users/getOne/" + iduser)
+  }
+
+  UpdateUser(user) {
+    const httpPostOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      }),
+    };
+    return this.http.put(this.urlbase.geturl() + "users/update", user, httpPostOptions)
+  }
+
+  SelectClient(idclient) {
+    return this.http.get(this.urlbase.geturl() + "cliente/getOne/" + idclient)
+  }
+
+  UpdateClient(client) {
+    const httpPostOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      }),
+    };
+    return this.http.put(this.urlbase.geturl() + "cliente/update", client, httpPostOptions)
+  }
+
 }
 
